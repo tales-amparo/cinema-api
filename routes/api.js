@@ -8,20 +8,14 @@ const router = new RouteGroup('/'. Router())
 //para todas as rotas ele vai adicionar o V1 antes - agrupando rotas abaixo
 
 router.group('v1', ({group}) =>{
-
     //exemplo: v1/movies
-    
 
-    group('movies', (resources}) => {
-
+    group('movies', ({resources}) => {
         resource({
-            handlers: MoviesController
-            
+            handlers: MoviesController,
         });
 
     })
-
-
 })
 
 module.exports = router.export
